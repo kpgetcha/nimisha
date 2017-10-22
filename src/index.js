@@ -7,7 +7,6 @@ import registerServiceWorker from './registerServiceWorker';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducer from '../src/reducers/reducer';
-import { Router, Route } from 'react-router';
 
 import Test from './test';
 
@@ -18,10 +17,7 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router>
-        <Route path="/" component={App} />
-        <Route path="/test" component={Test} />
-    </Router>
+    <App />
   </Provider>,
   document.getElementById('root'));
 registerServiceWorker();
